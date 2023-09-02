@@ -1,1 +1,229 @@
-G9AD3EFC7651CDD3B1728B021EF8BEAD37DD6FA
+/*
+
+瞎操作说明:
+
+解密链接☞ ?url=
+
+加密链接(仅支持非图床和非pk密码接口)
+?jm=1&url=
+
+格式如下:(多个格式链接 任选一)
+m=0 ☞ 图床(默认可不填)
+img=图片链接(默认可不填 下同)
+?jm=1&url=配置链接&m=0&img=图片链接
+?jm=1&url=配置链接&img=图片链接
+?jm=1&url=配置链接&m=0
+?jm=1&url=配置链接
+
+m=1 ☞ pk密码模式 接口格式 地址;pk;密码
+秘钥字串位数不能大于16 (下同)
+?jm=1&url=配置链接&m=1&key=秘钥
+
+m=2 ☞ 转2423
+偏移量字串位数不能大于13 (默认可不填 下同)
+?jm=1&url=配置链接&m=2&key=秘钥&iv=偏移量
+?jm=1&url=配置链接&m=2&key=秘钥
+
+m=3 ☞ 转2423➕图床
+?jm=1&url=配置链接&m=3&key=秘钥&iv=偏移量&img=图片链接
+?jm=1&url=配置链接&m=3&key=秘钥&iv=偏移量
+?jm=1&url=配置链接&m=3&key=秘钥
+
+接口合併链接(支持加密&jm=1)☞ ?sub=
+
+影視TV版 影視手機/平板版
+官方發佈頻道 https://t.me/fongmi_release
+
+官方交流群 https://t.me/fongmi_offical
+
+作者的18🈲交流群 https://t.me/fongmi_adult
+
+官方開源倉庫 https://github.com/fongmi/tv
+
+最新APP仓库下载 https://github.com/FongMi/TV/releases
+
+官方爬虫仓库 https://github.com/FongMi/CatVodSpider
+
+蜂蜜原裝接口
+(海外專用)
+18+ ＞https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/adult.json
+
+正规 ＞https://raw.githubusercontent.com/FongMi/CatVodSpider/main/json/config.json
+
+网友自制蜂蜜接口轉發
+(由於蜂蜜原裝接口沒有添加加速鏈 然而生之 每30分钟同步一次 國內專用)
+18+ ＞https://ts--ly23.repl.co/fm18
+            http://大屌蜂蜜.eu.org
+
+
+正规 ＞https://ts--ly23.repl.co/fmtv
+             http://蜂蜜.eu.org
+
+
+      本APP是臺灣大佬蜂蜜(活雷鋒)一人始於2022.06.22基于猫影视制作而成，功能强大且完全免费无广告。更多功能与操作说明请點擊這裡查看!!!
+
+TVB/影视接口(瞎操作说明) https://api.ys66.repl.co
+?url=  >>加密(jm=1)&解密
+?sub=  >>接口合并(需规则文件直链)(支持加密)
+
+*###-----*------*------###*
+接口加密/解密 https://api.ys66.repl.co?url=
+
+接口合并(可加密) https://api.ys66.repl.co?sub=
+
+其他参数说明在文件内，但该文件是做合并接口实例的 ，谨记！谨记！最后最好删除所有注释，以防报错。
+飞机群
+讨论群发
+https://t.me/fongmi_offical
+频道
+https://t.me/fongmi_release
+
+調整 viewType 改為 style
+
+type 有 4 種模式
+rect、oval、full、list
+
+ratio 為比例 寬/高
+預設為直向 3:4 = 0.75
+修改橫向 4:3 則是 1.33
+
+範例：
+直式 "style":{ "type":"rect" }
+橫式 "style":{ "type":"rect", "ratio":1.33 }
+正方 "style":{ "type":"rect", "ratio":1 }
+正圓 "style":{ "type":"oval" }
+橢圓 "style":{ "type":"oval", "ratio":1.1 }
+
+点播栏位
+
+searchable：搜索    (0：關閉、1：啟用)  
+changeable：換源    (0：關閉、1：啟用)
+playerType：播放器  (1：IJK、2：EXO)
+
+直播栏位
+
+ua：用戶代理
+referer：參照位址
+epg：節目網址
+logo：台標網址
+pass：是否免密碼
+boot：是否自動開啟
+playerType：播放器
+recordable = 0  不記憶
+配置范例
+
+点播-线上
+https://gh-proxy.com/https://github.com/FongMi/TV/blob/dev/other/sample/vod/online.json
+{
+  "spider": "https://github.com/custom_spider.jar",
+  "sites": [
+    {
+      "key": "one",
+      "name": "One",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "https://github.com/one.json"
+    },
+    {
+      "key": "two",
+      "name": "Two",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "https://github.com/two.json"
+    },
+    {
+      "key": "extend",
+      "name": "Extend",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "https://github.com/extend.json",
+      "jar": "https://github.com/extend.jar"
+    }
+  ]
+}
+点播-本地
+https://gh-proxy.com/https://github.com/FongMi/TV/blob/dev/other/sample/vod/offline.json
+{
+  "spider": "file://Download/custom_spider.jar",
+  "sites": [
+    {
+      "key": "one",
+      "name": "One",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "file://Download/one.json"
+    },
+    {
+      "key": "two",
+      "name": "Two",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "file://Download/two.json"
+    },
+    {
+      "key": "extend",
+      "name": "Extend",
+      "type": 3,
+      "api": "csp_Csp",
+      "searchable": 1,
+      "changeable": 1,
+      "ext": "file://Download/extend.json",
+      "jar": "file://Download/extend.jar"
+    }
+  ]
+}
+直播-线上
+https://gh-proxy.com/https://github.com/FongMi/TV/blob/dev/other/sample/live/online.json
+{
+  "lives": [
+    {
+      "name": "M3U",
+      "url": "https://github.com/live.m3u"
+    },
+    {
+      "name": "TXT",
+      "url": "https://github.com/live.txt",
+      "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png"
+    },
+    {
+      "name": "IJK",
+      "url": "https://github.com/live.txt",
+      "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "playerType": 1
+    },
+    {
+      "name": "EXO",
+      "url": "https://github.com/live.txt",
+      "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "playerType": 2
+    },
+    {
+      "name": "PRO",
+      "boot": false,
+      "url": "https://github.com/live.txt",
+      "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36",
+      "referer": "https://github.com/"
+    },
+    {
+      "name": "Custom",
+      "boot": false,
+      "pass": true,
+      "url": "https://github.com/live.txt",
+      "epg": "https://epg.112114.xyz/?ch={name}&date={date}",
+      "logo": "https://epg.112114.xyz/logo/{name}.png",
+      "hea
